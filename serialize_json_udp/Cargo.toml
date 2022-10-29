@@ -1,15 +1,9 @@
 [package]
-name = "rust_simple_udp_example"
+name = "serialize_json_udp"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-
-
-[workspace]
-
-members=[
-    "simple_sender_receiver",
-    "serialize_json_udp",
-]
+[dependencies]
+serde_json = "1.0"
