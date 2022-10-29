@@ -4,8 +4,10 @@ use clap::Parser;
 #[derive(Parser)]
 struct Cli {
     /// The pattern to look for
+    #[arg(short, long)]
     pattern: String,
     /// The path to the file to read
+    #[arg(short, long)]
     search_text: String,
 }
 
