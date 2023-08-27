@@ -12,5 +12,6 @@ edition = "2021"
 members=[
     "simple_sender_receiver",
     "serialize_json_udp",
+    "serialize_json_udp_threads",
     "simple_cli",
 ]

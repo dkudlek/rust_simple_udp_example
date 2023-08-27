@@ -172,6 +172,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "serialize_json_udp_threads"
+version = "0.1.0"
+dependencies = [
+ "serde_json",
+]
+
+[[package]]
 name = "simple_cli"
 version = "0.1.0"
 dependencies = [

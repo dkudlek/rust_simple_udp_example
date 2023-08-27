@@ -4,18 +4,18 @@ use clap::Parser;
 #[derive(Parser)]
 struct Cli {
     /// The pattern to look for
-    #[arg(short, long)]
+    #[arg(short, long, default_value = "help")]
     pattern: String,
     /// The path to the file to read
-    #[arg(short, long)]
+    #[arg(short, long, default_value = "help me")]
     search_text: String,
 }
 
 fn main() {
     let args = Cli::parse();
-    if args.search_text.contains(&args.pattern){
+    if args.search_text.contains(&args.pattern) {
         println!("Found!");
-    }else{
+    } else {
         println!("Not Found!");
     }
 }
