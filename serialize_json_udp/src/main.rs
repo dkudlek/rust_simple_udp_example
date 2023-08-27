@@ -50,23 +50,11 @@ fn main() {
         "msg: ": "Hello Space!"
     });
     // json sender 1
-    let socket1: UdpSocket = match UdpSocket::bind("127.0.0.1:45000") {
-        Ok(sock) => sock,
-        Err(e) => panic!("Error! {}", e),
-    };
-    match socket1.set_nonblocking(true) {
-        Err(e) => panic!("Error! {}", e),
-        _ => {}
-    }
+    let socket1: UdpSocket = UdpSocket::bind("127.0.0.1:45000").unwrap();
+    socket1.set_nonblocking(true).unwrap();
     // json sender 2
-    let socket2: UdpSocket = match UdpSocket::bind("127.0.0.1:45001") {
-        Ok(sock) => sock,
-        Err(e) => panic!("Error! {}", e),
-    };
-    match socket2.set_nonblocking(true) {
-        Err(e) => panic!("Error! {}", e),
-        _ => {}
-    }
+    let socket2: UdpSocket = UdpSocket::bind("127.0.0.1:45001").unwrap();
+    socket2.set_nonblocking(true).unwrap();
 
     let signal_atomic = keep_alive.clone();
     let signal_thread = thread::spawn(move || stop(signal_atomic));
